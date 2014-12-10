@@ -11,16 +11,24 @@ namespace UnitsConverter
         static void Main(string[] args)
         {
             UnitsConverter converter = new UnitsConverter();
+            try
+            {
+                converter.AddConverter(UnitsConverterType.GramToKg, ConvertorMethods.ConvertGramToKg);
+                converter.AddConverter(UnitsConverterType.KgToMilligram, ConvertorMethods.ConvertKgToMilligram);
+                converter.AddConverter(UnitsConverterType.MilligramToTonne, ConvertorMethods.ConvertMilligramToTonne);
 
-            converter.AddConverter(UnitsConverterType.GramToKg, ConvertorMethods.ConvertGramToKg);
-            converter.AddConverter(UnitsConverterType.KgToMilligram, ConvertorMethods.ConvertKgToMilligram);
-            converter.AddConverter(UnitsConverterType.MilligramToTonne, ConvertorMethods.ConvertMilligramToTonne);
-
-            double result = converter.Convert(new[] { UnitsConverterType.GramToKg, 
+                double result = converter.Convert(new[] { UnitsConverterType.GramToKg, 
                 UnitsConverterType.KgToMilligram, 
-                UnitsConverterType.MilligramToTonne}, 
-                1000);
-            Console.WriteLine(result);
+                UnitsConverterType.MilligramToTonne,
+                UnitsConverterType.KgToTonne},
+                    1000);
+                Console.WriteLine(result);
+
+            }catch(ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
             Console.Read();
         }
     }

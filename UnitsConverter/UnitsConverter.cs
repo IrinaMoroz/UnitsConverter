@@ -17,6 +17,8 @@ namespace UnitsConverter
         }
         public void AddConverter(UnitsConverterType ut, Function func)
         {
+            if (converters.ContainsKey(ut))
+                throw new ArgumentException(String.Format("{0} is already registred", ut));
             converters.Add(ut, func);
         }
 
@@ -24,7 +26,13 @@ namespace UnitsConverter
         {
             double result = inputValue;
             foreach (var unitType in direction)
-                result = converters[unitType](result);
+            {
+                if (converters.ContainsKey(unitType))
+                    result = converters[unitType](result);
+                else
+                    throw new ArgumentException(String.Format("{0} hasn't been registered yet. Use AddConverter method to registering new Converter", unitType));
+            }
+                
             return result;
         }
            
