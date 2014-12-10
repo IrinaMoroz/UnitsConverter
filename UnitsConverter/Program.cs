@@ -12,14 +12,15 @@ namespace UnitsConverter
         {
             UnitsConverter converter = new UnitsConverter();
 
-            converter.AddConverter(UnitsConverterType.MilligramToGram, ConvertorMethods.ConvertMilligramToGram);
-            converter.AddConverter(UnitsConverterType.MilligramToKg, ConvertorMethods.ConvertMilligramToKg);
+            converter.AddConverter(UnitsConverterType.GramToKg, ConvertorMethods.ConvertGramToKg);
+            converter.AddConverter(UnitsConverterType.KgToMilligram, ConvertorMethods.ConvertKgToMilligram);
             converter.AddConverter(UnitsConverterType.MilligramToTonne, ConvertorMethods.ConvertMilligramToTonne);
 
-            converter.Convert(new[] { UnitsConverterType.MilligramToGram, 
-                UnitsConverterType.MilligramToKg, 
+            double result = converter.Convert(new[] { UnitsConverterType.GramToKg, 
+                UnitsConverterType.KgToMilligram, 
                 UnitsConverterType.MilligramToTonne}, 
-                10000000000);
+                1000);
+            Console.WriteLine(result);
             Console.Read();
         }
     }

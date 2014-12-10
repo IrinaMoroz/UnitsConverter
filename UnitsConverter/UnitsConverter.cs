@@ -22,9 +22,10 @@ namespace UnitsConverter
 
         public double Convert(UnitsConverterType[] direction, double inputValue)
         {
+            double result = inputValue;
             foreach (var unitType in direction)
-                Console.WriteLine("{0}: {1}\rn", unitType,converters[unitType](inputValue));
-            return 0.0;
+                result = converters[unitType](result);
+            return result;
         }
            
 
