@@ -14,8 +14,12 @@ namespace UnitsConverter
 
             converter.AddConverter(UnitsConverterType.MilligramToGram, ConvertorMethods.ConvertMilligramToGram);
             converter.AddConverter(UnitsConverterType.MilligramToKg, ConvertorMethods.ConvertMilligramToKg);
+            converter.AddConverter(UnitsConverterType.MilligramToTonne, ConvertorMethods.ConvertMilligramToTonne);
 
-            converter.Convert(new []{UnitsConverterType.MilligramToGram, UnitsConverterType.MilligramToKg}, 1000);
+            converter.Convert(new[] { UnitsConverterType.MilligramToGram, 
+                UnitsConverterType.MilligramToKg, 
+                UnitsConverterType.MilligramToTonne}, 
+                10000000000);
             Console.Read();
         }
     }

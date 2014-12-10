@@ -20,24 +20,69 @@ namespace UnitsConverter
         {
             return number * 0.000002204622621849;
         }
-        /*
-        public static double ConvertMilligramToTonne,
-        public static double ConvertGramToMilligram,
-        public static double ConvertGramToKg,
-        public static double ConvertGramToPound,
-        public static double ConvertGramToTonne,
-        public static double ConvertKgToMilligram,
-        public static double ConvertKgToGram,
-        public static double ConvertKgToPound,
-        public static double ConvertKgToCentral,
-        public static double ConvertKgToTonne,
-        public static double ConvertPoundToMilligram,
-        public static double ConvertPoundToKg,
-        public static double ConvertPoundToGram,
-        public static double ConvertPoundToTonne,
-        public static double ConvertTonneToMilligram,
-        public static double ConvertTonneToGram,
-        public static double ConvertTonneTokg,
-        public static double ConvertTonneToPound*/
+        public static double ConvertMilligramToTonne(double number)
+        {
+            return number * 1E-9d;
+        }
+        public static double ConvertGramToMilligram(double number)
+        {
+            return number * 1000;
+        }
+        public static double ConvertGramToKg(double number)
+        {
+            return number * 0.001;
+        }
+        public static double ConvertGramToPound(double number)
+        {
+            return number * 0.002204622621849;
+        }
+        public static double ConvertGramToTonne(double number)
+        {
+            return number * 0.000001;
+        }
+        public static double ConvertKgToMilligram(double number)
+        {
+            return number * 1000000;
+        }
+        public static double ConvertKgToPound(double number)
+        {
+            return number * 2.204622621849;
+        }
+        public static double ConvertKgToTonne(double number)
+        {
+            return number * 0.001;
+        }
+        public static double ConvertPoundToMilligram(double number)
+        {
+            return number * 453592.37;
+        }
+        public static double ConvertPoundToGram(double number)
+        {
+            return number * 453.59237;
+        }
+        public static double ConvertPoundToKg(double number)
+        {
+            return number * 0.45359237;
+        }
+        public static double ConvertPoundToTonne(double number)
+        {
+            return number * 0.00045359237;
+        }
+        public static double ConvertTonneToMilligram(double number)
+        {
+            return number * 1000000000;
+        }
+        public static double ConvertTonneToGram(double number)
+        {
+            return number * 1000000;
+        }
+        public static double ConvertTonneTokg(double number)
+        {
+            return number * 1000;
+        }
+        public static double ConvertTonneToPound(double number)
+        {
+            return number * 2204.622621849;
+        }
     }
 }
